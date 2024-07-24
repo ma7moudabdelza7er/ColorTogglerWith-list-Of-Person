@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#fff;
+    --primary-label:black;
+    --secondary-label:#fff;
+    --white-ball:#fff;
+    --black-ball:black;
+}
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.container .header{
+    background-color: black;
+    color: #fff;
+    padding: 10px 12px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+.container .header .title{
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.header input{
+    width: 90%;
+    margin: 10px auto 15px;
+    border: 0;
+    outline: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+.user-list{
+    background: #fff;
+    list-style: none;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+/* java script */
+.user-list li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.user-list li img{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.user-list li .user-info h4{
+    margin-bottom: 10px;
+}
+.user-list li .user-info p{
+    font-size: 12px;
+}
+.user-list li.hide{
+    display: none;
+}
+li .hr{
+    border: 1px solid #eee;
+    width: 90%;
+    position: absolute;
+    margin-top: 75px;
+    overflow-x: hidden;
+}
+.toggler-container{
+    position: absolute;
+    right: 8%;
+    top: 2%;
+}
+#switch{
+     visibility: hidden;
+}
+.toggler-container label{
+    display: block;
+    width: 85px;
+    height: 42px;
+    background-color: var(--primary-label);
+    position: absolute;
+    border-radius: 100px;
+    transition: 0.5s;
+}
+.toggler-container label::after{
+    content: "";
+    width: 34px;
+    height: 34px;
+    background-color: var(--white-ball);
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    transition: 1s;
+}
+.toggler-container label::before{
+    content: "";
+    width: 34px;
+    height: 34px;
+    background-color: var(--black-ball);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    right:4px;
+    cursor: pointer;
+    transition: 1s;
+}
+#switch:checked + label{
+    background-color: var(--black-ball) ;
+    display: block;
+    width: 85px;
+    height: 42px;
+    border: 3px solid darkred;
+    background-color: var(--secondary-label);
+    position: absolute;
+    border-radius: 100px;
+}
+
+
